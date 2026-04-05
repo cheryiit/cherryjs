@@ -1,0 +1,577 @@
+# Convex Components Directory
+# A curated index of open-source components for the Convex backend platform.
+# 82 components | Updated 2026-04-02
+
+## convex-api-keys
+- URL: https://www.convex.dev/components/00akshatsinha00/convex-api-keys
+- Markdown: https://www.convex.dev/api/markdown?slug=00akshatsinha00/convex-api-keys
+- npm: https://www.npmjs.com/package/%4000akshatsinha00%2Fconvex-api-keys
+- Category: auth
+- Description: A zero-dependency Convex component for API key management that handles generation, SHA-256 hashing, verification, rate limiting, RBAC, and audit logging entirely within Convex's transactional guarante
+
+## convex-cascading-delete
+- URL: https://www.convex.dev/components/00akshatsinha00/convex-cascading-delete
+- Markdown: https://www.convex.dev/api/markdown?slug=00akshatsinha00/convex-cascading-delete
+- npm: https://www.npmjs.com/package/%4000akshatsinha00%2Fconvex-cascading-delete
+- Category: auth
+- Description: Automatically delete related Convex documents using existing indexes with atomic or batched modes for data consistency.
+
+## convex-orchestrator
+- URL: https://www.convex.dev/components/akshatgiri/convex-orchestrator
+- Markdown: https://www.convex.dev/api/markdown?slug=akshatgiri/convex-orchestrator
+- npm: https://www.npmjs.com/package/%40akshatgiri%2Fconvex-orchestrator
+- Category: ai
+- Description: A durable workflow orchestration system built on Convex that executes step functions on your local machines while storing workflow state durably. Workers pull workflow tasks from Convex, execute activ
+
+## convex-stagehand
+- URL: https://www.convex.dev/components/stagehand
+- Markdown: https://www.convex.dev/api/markdown?slug=stagehand
+- npm: https://www.npmjs.com/package/%40browserbasehq%2Fconvex-stagehand
+- Category: ai
+- Description: convex-stagehand brings AI-powered browser automation to Convex actions using natural language instructions. Extract structured data from web pages, perform complex user interactions, and automate mul
+
+## oauth-provider
+- URL: https://www.convex.dev/components/codefox-inc/oauth-provider
+- Markdown: https://www.convex.dev/api/markdown?slug=codefox-inc/oauth-provider
+- npm: https://www.npmjs.com/package/%40codefox-inc%2Foauth-provider
+- Category: auth
+- Description: Turns your Convex app into a fully compliant OAuth 2.1 / OpenID Connect provider with Dynamic Client Registration support. Implements secure authorization flows with PKCE enforcement, JWT access token
+
+## Action Cache
+- URL: https://www.convex.dev/components/action-cache
+- Markdown: https://www.convex.dev/api/markdown?slug=action-cache
+- npm: https://www.npmjs.com/package/%40convex-dev%2Faction-cache
+- Category: backend
+- Description: Action Cache stores the results of expensive Convex actions like third-party API calls and AI operations in a persistent cache with configurable TTL expiration. The cache automatically handles cleanup
+
+## Action Retrier
+- URL: https://www.convex.dev/components/retrier
+- Markdown: https://www.convex.dev/api/markdown?slug=retrier
+- npm: https://www.npmjs.com/package/%40convex-dev%2Faction-retrier
+- Category: durable-functions
+- Description: The Action Retrier component automatically retries failed Convex actions with exponential backoff, making external API calls and network operations more reliable. It handles transient failures by runn
+
+## AI Agent
+- URL: https://www.convex.dev/components/agent
+- Markdown: https://www.convex.dev/api/markdown?slug=agent
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fagent
+- Category: ai
+- Description: The AI Agent component provides a structured framework for building agentic AI workflows with persistent message threads, automatic conversation context, and vector search capabilities. It separates l
+
+## Aggregate
+- URL: https://www.convex.dev/components/aggregate
+- Markdown: https://www.convex.dev/api/markdown?slug=aggregate
+- npm: https://www.npmjs.com/package/%40convex-dev%2Faggregate
+- Category: database
+- Description: The Aggregate component maintains denormalized counts and sums for efficient data aggregation in O(log n) time instead of O(n) table scans. It provides sorted key-value storage with range queries, sup
+
+## Better Auth
+- URL: https://www.convex.dev/components/better-auth
+- Markdown: https://www.convex.dev/api/markdown?slug=better-auth
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fbetter-auth
+- Category: auth
+- Description: This component provides an integration layer for using Better Auth with Convex, enabling framework-agnostic authentication across React, Vue, Svelte, Next.js, and other popular frameworks. It handles 
+
+## Crons
+- URL: https://www.convex.dev/components/crons
+- Markdown: https://www.convex.dev/api/markdown?slug=crons
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fcrons
+- Category: durable-functions
+- Description: This component enables dynamic registration and management of cron jobs at runtime, solving the limitation of Convex's built-in cron jobs which must be statically defined at deployment time. It suppor
+
+## Expo Push Notifications
+- URL: https://www.convex.dev/components/push-notifications
+- Markdown: https://www.convex.dev/api/markdown?slug=push-notifications
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fexpo-push-notifications
+- Category: integrations
+- Description: This component integrates Convex with Expo's push notification API to send mobile push notifications to app users. It handles batching multiple notifications into efficient API calls, implements expon
+
+## Geospatial
+- URL: https://www.convex.dev/components/geospatial
+- Markdown: https://www.convex.dev/api/markdown?slug=geospatial
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fgeospatial
+- Category: database
+- Description: A geospatial indexing component that enables efficient storage and querying of geographic points within Convex. You can insert points with coordinates, filter keys, and sort keys, then query for all p
+
+## LaunchDarkly Feature Flags
+- URL: https://www.convex.dev/components/launchdarkly
+- Markdown: https://www.convex.dev/api/markdown?slug=launchdarkly
+- npm: https://www.npmjs.com/package/%40convex-dev%2Flaunchdarkly
+- Category: integrations
+- Description: This component integrates LaunchDarkly feature flags directly into your Convex backend functions. It syncs your LaunchDarkly environment to your Convex deployment in real-time via webhooks, eliminatin
+
+## Migrations
+- URL: https://www.convex.dev/components/migrations
+- Markdown: https://www.convex.dev/api/markdown?slug=migrations
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fmigrations
+- Category: database
+- Description: A framework for running long-running data migrations on live Convex databases without downtime. It processes documents in batches asynchronously, tracks migration state to handle failures and resumpti
+
+## Persistent Text Streaming
+- URL: https://www.convex.dev/components/persistent-text-streaming
+- Markdown: https://www.convex.dev/api/markdown?slug=persistent-text-streaming
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fpersistent-text-streaming
+- Category: ai
+- Description: This component combines HTTP streaming with database persistence to deliver real-time text updates while storing content permanently. It provides a React hook that streams text from HTTP actions while
+
+## Polar
+- URL: https://www.convex.dev/components/polar
+- Markdown: https://www.convex.dev/api/markdown?slug=polar
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fpolar
+- Category: payments
+- Description: Integrates Polar subscriptions and billing into Convex applications with automatic webhook synchronization and React UI components. Provides type-safe subscription management, product syncing, and cus
+
+## Presence
+- URL: https://www.convex.dev/components/presence
+- Markdown: https://www.convex.dev/api/markdown?slug=presence
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fpresence
+- Category: collaboration
+- Description: This component provides real-time user presence tracking for rooms or spaces in your application. It efficiently manages who's online, when users were last active, and handles join/leave events withou
+
+## Collaborative Text Editor Sync
+- URL: https://www.convex.dev/components/prosemirror-sync
+- Markdown: https://www.convex.dev/api/markdown?slug=prosemirror-sync
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fprosemirror-sync
+- Category: collaboration
+- Description: This component adds collaborative document editing to your Convex app using ProseMirror's operational transformation engine. It provides React hooks for Tiptap and BlockNote editors that automatically
+
+## Cloudflare R2
+- URL: https://www.convex.dev/components/cloudflare-r2
+- Markdown: https://www.convex.dev/api/markdown?slug=cloudflare-r2
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fr2
+- Category: integrations
+- Description: The Cloudflare R2 component provides file storage and serving capabilities using Cloudflare's R2 object storage service. It handles signed URL generation for uploads, syncs file metadata to your Conve
+
+## RAG
+- URL: https://www.convex.dev/components/rag
+- Markdown: https://www.convex.dev/api/markdown?slug=rag
+- npm: https://www.npmjs.com/package/%40convex-dev%2Frag
+- Category: ai
+- Description: A semantic search component that implements Retrieval-Augmented Generation (RAG) for AI applications. It automatically chunks text content, generates embeddings using AI SDK models, and provides vecto
+
+## Rate Limiter
+- URL: https://www.convex.dev/components/rate-limiter
+- Markdown: https://www.convex.dev/api/markdown?slug=rate-limiter
+- npm: https://www.npmjs.com/package/%40convex-dev%2Frate-limiter
+- Category: backend
+- Description: Provides type-safe, transactional application-layer rate limiting for Convex apps. Supports both fixed window and token bucket algorithms with configurable sharding for high-throughput scenarios. Feat
+
+## Resend
+- URL: https://www.convex.dev/components/resend
+- Markdown: https://www.convex.dev/api/markdown?slug=resend
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fresend
+- Category: integrations
+- Description: The official Resend email service integration for Convex that provides queued, batched email delivery with built-in retry logic and rate limiting. It handles Resend API idempotency keys to prevent dup
+
+## Sharded Counter
+- URL: https://www.convex.dev/components/sharded-counter
+- Markdown: https://www.convex.dev/api/markdown?slug=sharded-counter
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fsharded-counter
+- Category: database
+- Description: A scalable counter component that distributes count operations across multiple document shards to achieve high throughput. It provides atomic increment/decrement operations that can run in parallel wi
+
+## Static-Hosting
+- URL: https://www.convex.dev/components/static-hosting
+- Markdown: https://www.convex.dev/api/markdown?slug=static-hosting
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fstatic-hosting
+- Category: integrations
+- Description: Static-Hosting enables developers to serve React/Vite apps directly from Convex without external hosting providers. It uses Convex HTTP actions to serve files from Convex storage, with automatic SPA f
+
+## Stripe
+- URL: https://www.convex.dev/components/stripe
+- Markdown: https://www.convex.dev/api/markdown?slug=stripe
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fstripe
+- Category: payments
+- Description: A Convex component that handles the complete Stripe integration lifecycle including checkout sessions, subscription management, customer billing portals, and webhook synchronization. It automatically 
+
+## Twilio SMS
+- URL: https://www.convex.dev/components/twilio
+- Markdown: https://www.convex.dev/api/markdown?slug=twilio
+- npm: https://www.npmjs.com/package/%40convex-dev%2Ftwilio
+- Category: integrations
+- Description: This Twilio component integrates SMS messaging capabilities into your Convex app. It handles both sending outgoing messages through Twilio's API and receiving incoming messages via webhook handlers. T
+
+## Workflow
+- URL: https://www.convex.dev/components/workflow
+- Markdown: https://www.convex.dev/api/markdown?slug=workflow
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fworkflow
+- Category: durable-functions
+- Description: The Workflow component adds durable execution to Convex functions, allowing you to build reliable long-running processes that survive server restarts and handle failures gracefully. It combines querie
+
+## WorkOS AuthKit
+- URL: https://www.convex.dev/components/workos-authkit
+- Markdown: https://www.convex.dev/api/markdown?slug=workos-authkit
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fworkos-authkit
+- Category: auth
+- Description: The WorkOS AuthKit component provides official integration between WorkOS AuthKit authentication and Convex databases. It automatically syncs user data from WorkOS to Convex via webhooks, handles Work
+
+## Workpool
+- URL: https://www.convex.dev/components/workpool
+- Markdown: https://www.convex.dev/api/markdown?slug=workpool
+- npm: https://www.npmjs.com/package/%40convex-dev%2Fworkpool
+- Category: durable-functions
+- Description: Workpool manages parallel execution of Convex actions and mutations by organizing them into separate, customizable queues with configurable parallelism limits. It provides built-in retry logic with ba
+
+## quick-convex
+- URL: https://www.convex.dev/components/danthegoodman/quick-convex
+- Markdown: https://www.convex.dev/api/markdown?slug=danthegoodman/quick-convex
+- npm: https://www.npmjs.com/package/%40danthegoodman%2Fquick-convex
+- Category: durable-functions
+- Description: Implements Apple's QuiCK paper as a Convex component, providing FIFO and priority queue processing with retries and concurrent execution.
+
+## DatabaseChat
+- URL: https://www.convex.dev/components/dayhaysoos/convex-database-chat
+- Markdown: https://www.convex.dev/api/markdown?slug=dayhaysoos/convex-database-chat
+- npm: https://www.npmjs.com/package/%40dayhaysoos%2Fconvex-database-chat
+- Category: ai
+- Description: DatabaseChat is a Convex component that lets users query your database using natural language. It provides conversation storage, efficient delta-based streaming, and tool calling capabilities that all
+
+## Loops
+- URL: https://www.convex.dev/components/devwithbobby/loops
+- Markdown: https://www.convex.dev/api/markdown?slug=devwithbobby/loops
+- npm: https://www.npmjs.com/package/%40devwithbobby%2Floops
+- Category: integrations
+- Description: Integrates Convex applications with Loops.so for email marketing operations including transactional emails, contact management, and automated workflows. Provides TypeScript-safe APIs for all Loops.so 
+
+## convex-authz
+- URL: https://www.convex.dev/components/djpanda/convex-authz
+- Markdown: https://www.convex.dev/api/markdown?slug=djpanda/convex-authz
+- npm: https://www.npmjs.com/package/%40djpanda%2Fconvex-authz
+- Category: auth
+- Description: A comprehensive authorization component that implements RBAC, ABAC, and ReBAC (relationship-based access control) with O(1) indexed permission lookups. Inspired by Google Zanzibar, it provides role as
+
+## convex-tenants
+- URL: https://www.convex.dev/components/djpanda/convex-tenants
+- Markdown: https://www.convex.dev/api/markdown?slug=djpanda/convex-tenants
+- npm: https://www.npmjs.com/package/%40djpanda%2Fconvex-tenants
+- Category: auth
+- Description: A multi-tenant component that adds organization, team, and member management to Convex applications with built-in authorization via @djpanda/convex-authz. Provides complete CRUD operations for organiz
+
+## Dodo Payments
+- URL: https://www.convex.dev/components/dodopayments
+- Markdown: https://www.convex.dev/api/markdown?slug=dodopayments
+- npm: https://www.npmjs.com/package/%40dodopayments%2Fconvex
+- Category: payments
+- Description: The Dodo Payments Convex component integrates checkout sessions, customer portals, and webhook handling directly into Convex applications. It provides a complete billing solution with built-in webhook
+
+## OSS Stats
+- URL: https://www.convex.dev/components/oss-stats
+- Markdown: https://www.convex.dev/api/markdown?slug=oss-stats
+- npm: https://www.npmjs.com/package/%40erquhart%2Fconvex-oss-stats
+- Category: integrations
+- Description: This component automatically syncs GitHub stars, dependencies, and npm download statistics for your open source projects directly into your Convex database. It provides real-time updates via GitHub we
+
+## Files Control
+- URL: https://www.convex.dev/components/files-control
+- Markdown: https://www.convex.dev/api/markdown?slug=files-control
+- npm: https://www.npmjs.com/package/%40gilhrpenner%2Fconvex-files-control
+- Category: backend
+- Description: Files Control provides secure file upload and download workflows with granular access control for Convex applications. It implements two-step uploads with presigned URLs, download grants with usage li
+
+## Convex Comments 
+- URL: https://www.convex.dev/components/hamzasaleem2/convex-comments
+- Markdown: https://www.convex.dev/api/markdown?slug=hamzasaleem2/convex-comments
+- npm: https://www.npmjs.com/package/%40hamzasaleemorg%2Fconvex-comments
+- Category: collaboration
+- Description: A complete comments system component that adds threaded discussions with real-time features to any Convex application. It provides backend functions for managing comment threads organized into zones, 
+
+## convex-inbound
+- URL: https://www.convex.dev/components/hamzasaleemorg/convex-inbound
+- Markdown: https://www.convex.dev/api/markdown?slug=hamzasaleemorg/convex-inbound
+- npm: https://www.npmjs.com/package/%40hamzasaleemorg%2Fconvex-inbound
+- Category: integrations
+- Description: Drop-in Convex component that adds production-ready email sending and receiving with automatic retries, threading, and rate limiting.
+
+## convex-kv
+- URL: https://www.convex.dev/components/hamzasaleemorg/convex-kv
+- Markdown: https://www.convex.dev/api/markdown?slug=hamzasaleemorg/convex-kv
+- npm: https://www.npmjs.com/package/%40hamzasaleemorg%2Fconvex-kv
+- Category: database
+- Description: Store hierarchical key-value data in Convex with namespaced paths, supporting nested keys and efficient queries for configuration and metadata.
+
+## Convex Debouncer
+- URL: https://www.convex.dev/components/ikhrustalev/convex-debouncer
+- Markdown: https://www.convex.dev/api/markdown?slug=ikhrustalev/convex-debouncer
+- npm: https://www.npmjs.com/package/%40ikhrustalev%2Fconvex-debouncer
+- Category: backend
+- Description: A server-side debouncing component that prevents expensive operations from running too frequently by waiting for periods of inactivity. It provides three debouncing modes (sliding, fixed, eager) to ha
+
+## Cloudinary
+- URL: https://www.convex.dev/components/imaxis/cloudinary-convex
+- Markdown: https://www.convex.dev/api/markdown?slug=imaxis/cloudinary-convex
+- npm: https://www.npmjs.com/package/%40imaxis%2Fcloudinary-convex
+- Category: integrations
+- Description: This component integrates Cloudinary's image management APIs directly into Convex, providing both base64 uploads for small files and direct uploads that bypass Convex's 16MB limit for large files up t
+
+## Creem
+- URL: https://www.convex.dev/components/mmailaender/convex-creem
+- Markdown: https://www.convex.dev/api/markdown?slug=mmailaender/convex-creem
+- npm: https://www.npmjs.com/package/%40mmailaender%2Fconvex-creem
+- Category: payments
+- Description: The Creem component integrates subscription billing, one-time purchases, and seat-based pricing into Convex apps through the Creem billing service. It provides a complete billing API with webhook hand
+
+## Mux
+- URL: https://www.convex.dev/components/mux/convex
+- Markdown: https://www.convex.dev/api/markdown?slug=mux/convex
+- npm: https://www.npmjs.com/package/%40mux%2Fconvex
+- Category: collaboration
+- Description: The Mux Convex component syncs your Mux video assets, uploads, live streams, and events with Convex database tables. It provides real-time reactive queries for video catalog management and includes we
+
+## LLM Cache
+- URL: https://www.convex.dev/components/mzedstudio/llm-cache
+- Markdown: https://www.convex.dev/api/markdown?slug=mzedstudio/llm-cache
+- npm: https://www.npmjs.com/package/%40mzedstudio%2Fllm-cache
+- Category: ai
+- Description: Cache LLM API requests and responses in Convex with tiered TTL, time travel debugging, and request normalization to reduce costs and latency.
+
+## UploadThing
+- URL: https://www.convex.dev/components/mzedstudio/uploadthingtrack
+- Markdown: https://www.convex.dev/api/markdown?slug=mzedstudio/uploadthingtrack
+- npm: https://www.npmjs.com/package/%40mzedstudio%2Fuploadthingtrack
+- Category: integrations
+- Description: Track UploadThing files in Convex with automated access control, expiration cleanup, and webhook verification for secure file management.
+
+## Bright Data
+- URL: https://www.convex.dev/components/sholajegede/convex-bright-data
+- Markdown: https://www.convex.dev/api/markdown?slug=sholajegede/convex-bright-data
+- npm: https://www.npmjs.com/package/%40sholajegede%2Fconvex-bright-data
+- Category: integrations
+- Description: This component wraps Bright Data's SERP API and Web Unlocker with reactive Convex caching. Search results and scraped web content are stored in component-owned tables with configurable TTLs, enabling 
+
+## Bright Data Datasets
+- URL: https://www.convex.dev/components/sholajegede/convex-bright-data-datasets
+- Markdown: https://www.convex.dev/api/markdown?slug=sholajegede/convex-bright-data-datasets
+- npm: https://www.npmjs.com/package/%40sholajegede%2Fconvex-bright-data-datasets
+- Category: integrations
+- Description: This component integrates Bright Data's web scraping datasets with Convex's reactive database. It handles the complete pipeline from triggering async collections (LinkedIn profiles, Amazon products, j
+
+## Cascading Deletes
+- URL: https://www.convex.dev/components/sholajegede/convex-cascading-deletes
+- Markdown: https://www.convex.dev/api/markdown?slug=sholajegede/convex-cascading-deletes
+- npm: https://www.npmjs.com/package/%40sholajegede%2Fconvex-cascading-deletes
+- Category: database
+- Description: This component automates cascading deletes across related documents in your Convex database. You configure table relationships once using your existing indexes, then delete a record and all its depend
+
+## Kinde Sync
+- URL: https://www.convex.dev/components/sholajegede/kinde-sync
+- Markdown: https://www.convex.dev/api/markdown?slug=sholajegede/kinde-sync
+- npm: https://www.npmjs.com/package/%40sholajegede%2Fkinde-sync
+- Category: auth
+- Description: Automatically syncs Kinde authentication events into your Convex database via webhook handlers. Eliminates the need to write custom JWT verification, event parsing, and user synchronization logic. Whe
+
+## @the_shujaa/link-shortener
+- URL: https://www.convex.dev/components/the_shujaa/link-shortener
+- Markdown: https://www.convex.dev/api/markdown?slug=the_shujaa/link-shortener
+- npm: https://www.npmjs.com/package/@the_shujaa/link-shortener
+- Category: backend
+- Description: Self-hosted link shortener component for Convex with custom domains, click analytics, UTM tracking, and configurable rate limiting.
+
+## Transloadit
+- URL: https://www.convex.dev/components/transloadit/convex
+- Markdown: https://www.convex.dev/api/markdown?slug=transloadit/convex
+- npm: https://www.npmjs.com/package/%40transloadit%2Fconvex
+- Category: integrations
+- Description: This component provides a complete integration between Convex and Transloadit's media processing platform. It handles creating Assemblies with Templates or inline Steps, generates signed upload option
+
+## Autumn
+- URL: https://www.convex.dev/components/autumn
+- Markdown: https://www.convex.dev/api/markdown?slug=autumn
+- npm: https://www.npmjs.com/package/%40useautumn%2Fconvex
+- Category: payments
+- Description: Autumn provides a complete pricing and billing system built on top of Stripe, designed specifically for Convex applications. It abstracts complex billing logic into three core functions: check for fea
+
+## Browser Use Convex Component
+- URL: https://www.convex.dev/components/browser-use
+- Markdown: https://www.convex.dev/api/markdown?slug=browser-use
+- npm: https://www.npmjs.com/package/browser-use-convex-component
+- Category: ai
+- Description: This component integrates Browser Use Cloud's AI-powered browser automation API with Convex's reactive database. It provides persistent task tracking, session management, and browser profile storage w
+
+## Convex Api Keys
+- URL: https://www.convex.dev/components/convex-api-keys
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-api-keys
+- npm: https://www.npmjs.com/package/convex-api-keys
+- Category: auth
+- Description: A Convex component that provides secure API key management with automatic expiry, idle timeout tracking, and typed permissions. Handles key creation, validation, rotation, and revocation with SHA-256 
+
+## API Tokens
+- URL: https://www.convex.dev/components/convex-api-tokens
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-api-tokens
+- npm: https://www.npmjs.com/package/convex-api-tokens
+- Category: auth
+- Description: A Convex component that provides complete API token lifecycle management for SaaS applications. Issue sk_-prefixed tokens with namespaces, expiration, and metadata, then validate them on incoming requ
+
+## Convex Audit Log
+- URL: https://www.convex.dev/components/convex-audit-log
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-audit-log
+- npm: https://www.npmjs.com/package/convex-audit-log
+- Category: database
+- Description: The Convex Audit Log component provides comprehensive event tracking and change logging for Convex applications with built-in compliance features. It automatically captures who, what, when, and where 
+
+## AWS SES Convex Component
+- URL: https://www.convex.dev/components/convex-aws-ses
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-aws-ses
+- npm: https://www.npmjs.com/package/convex-aws-ses
+- Category: integrations
+- Description: Integrate AWS SES with Convex for reliable email delivery using queuing, rate limiting, and durable execution via workpools.
+
+## convex-batch-processor
+- URL: https://www.convex.dev/components/convex-batch-processor
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-batch-processor
+- npm: https://www.npmjs.com/package/convex-batch-processor
+- Category: durable-functions
+- Description: A batch processing component that provides two complementary patterns: a batch accumulator that collects items and flushes them based on size thresholds or time intervals, and a table iterator that pr
+
+## Brevo
+- URL: https://www.convex.dev/components/convex-brevo
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-brevo
+- npm: https://www.npmjs.com/package/convex-brevo
+- Category: integrations
+- Description: The Brevo component provides durable transactional email and SMS delivery through Convex's queueing system. It integrates with Brevo's API endpoints for email and SMS, handles webhook-based status tra
+
+## Convex Bunny Storage
+- URL: https://www.convex.dev/components/convex-bunny
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-bunny
+- npm: https://www.npmjs.com/package/convex-bunny
+- Category: integrations
+- Description: A Convex component that integrates Bunny.net's global CDN and storage service with your Convex backend. Upload files through Convex actions, store metadata in your database for reactive queries, and s
+
+## ClawdBot Message Hub
+- URL: https://www.convex.dev/components/convex-clawdbot-hub
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-clawdbot-hub
+- npm: https://www.npmjs.com/package/convex-clawdbot-hub
+- Category: collaboration
+- Description: A Convex Component that provides message hub infrastructure for AI chatbots with webhook processing, session management, and conversation history. Handles message deduplication, configurable session s
+
+## Durable Agents Component for Convex
+- URL: https://www.convex.dev/components/durable-agents
+- Markdown: https://www.convex.dev/api/markdown?slug=durable-agents
+- npm: https://www.npmjs.com/package/convex-durable-agents
+- Category: ai
+- Description: This component provides durable AI agents that can run indefinitely and survive server restarts or failures. Built on AI SDK v6, it executes agent tool loops asynchronously to avoid Convex action time
+
+## convex-elevenlabs
+- URL: https://www.convex.dev/components/convex-elevenlabs
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-elevenlabs
+- npm: https://www.npmjs.com/package/convex-elevenlabs
+- Category: ai
+- Description: Integrate ElevenLabs text-to-speech API with Convex backend functions for seamless voice synthesis in web applications.
+
+## Firecrawl Scrape
+- URL: https://www.convex.dev/components/firecrawl-scrape
+- Markdown: https://www.convex.dev/api/markdown?slug=firecrawl-scrape
+- npm: https://www.npmjs.com/package/convex-firecrawl-scrape
+- Category: ai
+- Description: This component provides a durable web scraping service that extracts content from URLs and returns clean markdown, HTML, screenshots, or structured JSON data. Built on Firecrawl's scraping API, it fea
+
+## ConvexFS
+- URL: https://www.convex.dev/components/convex-fs
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-fs
+- npm: https://www.npmjs.com/package/convex-fs
+- Category: backend
+- Description: ConvexFS provides filesystem-like operations for file management in Convex applications, backed by Bunny.net Edge Storage and CDN. Instead of working with raw blob storage, developers organize files u
+
+## convex-invite-links
+- URL: https://www.convex.dev/components/convex-invite-links
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-invite-links
+- npm: https://www.npmjs.com/package/convex-invite-links
+- Category: auth
+- Description: A Convex component that provides membership tracking and invite-based access control through shareable links. It handles group-level and resource-level permissions, invite lifecycle management with ex
+
+## convex-jina
+- URL: https://www.convex.dev/components/convex-jina
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-jina
+- npm: https://www.npmjs.com/package/convex-jina
+- Category: ai
+- Description: Convert any URL to clean markdown and search the web with Jina AI in Convex, featuring reactive queries and durable caching.
+
+## Kinde Billing
+- URL: https://www.convex.dev/components/convex-kinde-billing
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-kinde-billing
+- npm: https://www.npmjs.com/package/convex-kinde-billing
+- Category: payments
+- Description: Kinde Billing integrates Kinde's subscription billing with Convex through webhook handling and reactive queries. It automatically syncs subscription state, plan assignments, and billing events from Ki
+
+## convex-mq
+- URL: https://www.convex.dev/components/convex-mq
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-mq
+- npm: https://www.npmjs.com/package/convex-mq
+- Category: backend
+- Description: ConvexMQ is a typed message queue component that enables reliable background job processing with reactive consumption, visibility timeouts, and automatic retries. It offers two deployment modes: compo
+
+## Nano Banana
+- URL: https://www.convex.dev/components/convex-nano-banana
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-nano-banana
+- npm: https://www.npmjs.com/package/convex-nano-banana
+- Category: backend
+- Description: Nano Banana integrates Google Gemini's AI image generation directly into your Convex backend with persistent file storage and real-time status tracking. It provides a TypeScript API for text-to-image 
+
+## convex-passkey-auth
+- URL: https://www.convex.dev/components/convex-passkey-auth
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-passkey-auth
+- npm: https://www.npmjs.com/package/convex-passkey-auth
+- Category: auth
+- Description: This component provides complete WebAuthn passkey authentication for Convex apps, handling the full challenge/response flow with self-minted HMAC-SHA256 JWTs. It includes multi-device support, session
+
+## RevenueCat
+- URL: https://www.convex.dev/components/ramonclaudio-convex-revenuecat
+- Markdown: https://www.convex.dev/api/markdown?slug=ramonclaudio-convex-revenuecat
+- npm: https://www.npmjs.com/package/convex-revenuecat
+- Category: payments
+- Description: A Convex component that processes RevenueCat webhooks to maintain subscription state in your Convex database. It provides real-time entitlement checking by syncing all 18 RevenueCat webhook events and
+
+## Convex Secret Store
+- URL: https://www.convex.dev/components/convex-secret-store
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-secret-store
+- npm: https://www.npmjs.com/package/convex-secret-store
+- Category: integrations
+- Description: A Convex component that provides encrypted secret storage with envelope encryption, versioned key rotation, and audit logging. It encrypts secrets using per-secret DEKs wrapped with versioned KEKs, al
+
+## smart-tags
+- URL: https://www.convex.dev/components/convex-smart-tags
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-smart-tags
+- npm: https://www.npmjs.com/package/convex-smart-tags
+- Category: database
+- Description: Add intelligent hierarchical tagging and categorization to your Convex database with built-in analytics and smart organization features.
+
+## Timeline
+- URL: https://www.convex.dev/components/convex-timeline
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-timeline
+- npm: https://www.npmjs.com/package/convex-timeline
+- Category: backend
+- Description: A Convex component that provides undo/redo state management with automatic pruning and named checkpoints. It maintains a linear history of state snapshots organized by scope, allowing developers to na
+
+## convex-tracer
+- URL: https://www.convex.dev/components/convex-tracer
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-tracer
+- npm: https://www.npmjs.com/package/convex-tracer
+- Category: backend
+- Description: Track Convex function execution with detailed observability, nested spans, error tracing, and configurable sampling for debugging production issues.
+
+## Unread Tracking
+- URL: https://www.convex.dev/components/convex-unread-tracking
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-unread-tracking
+- npm: https://www.npmjs.com/package/convex-unread-tracking
+- Category: collaboration
+- Description: A Convex component that tracks read positions and unread message counts per user per channel using watermark-based positioning. It provides real-time unread counters, subscription management, and Reac
+
+## Webhook Sender
+- URL: https://www.convex.dev/components/convex-webhook-sender
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-webhook-sender
+- npm: https://www.npmjs.com/package/convex-webhook-sender
+- Category: backend
+- Description: A Convex component that handles reliable outbound webhook delivery with HMAC-SHA256 signing, automatic retries with exponential backoff, and comprehensive delivery tracking. It provides a managed queu
+
+## convex-youtube-cache
+- URL: https://www.convex.dev/components/convex-youtube-cache
+- Markdown: https://www.convex.dev/api/markdown?slug=convex-youtube-cache
+- npm: https://www.npmjs.com/package/convex-youtube-cache
+- Category: integrations
+- Description: This component provides a smart caching layer for YouTube video metadata with built-in rate limiting and quota management. It implements stale-while-revalidate patterns to return cached data immediate
+
+## Neutral Cost
+- URL: https://www.convex.dev/components/neutralcost
+- Markdown: https://www.convex.dev/api/markdown?slug=neutralcost
+- npm: https://www.npmjs.com/package/neutral-cost
+- Category: ai
+- Description: Neutral Cost provides comprehensive cost tracking and billing management for AI applications built on Convex. It tracks token usage from AI providers like OpenAI, tool costs from services like web sea

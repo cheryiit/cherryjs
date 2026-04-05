@@ -1,0 +1,18 @@
+{
+  "threshold": 5,
+  "reporters": ["console"],
+  "ignore": [
+    "node_modules",
+    "_generated",
+    "dist",
+    ".output",
+    "example_projects",
+    "docs",
+    "**/*.test.ts"
+  ],
+  "format": ["typescript", "typescriptreact", "css"],
+  "absolute": false,
+  "minLines": 6,
+  "minTokens": 50,
+  "skipLocal": false
+}

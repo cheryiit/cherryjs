@@ -1,0 +1,33 @@
+{
+  "entry": [
+    "convex/**/*.channel.ts",
+    "convex/**/*.schedule.ts",
+    "convex/schema.ts",
+    "convex/http.ts",
+    "convex/auth.ts",
+    "convex/triggers.ts",
+    "app/routes/**/*.tsx",
+    "app/routes/**/*.ts",
+    "app/router.tsx",
+    "app/client.tsx",
+    "app/server.tsx"
+  ],
+  "project": [
+    "convex/**/*.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx"
+  ],
+  "ignore": [
+    "convex/_generated/**",
+    "example_projects/**",
+    "docs/**",
+    "**/*.test.ts",
+    "app/routeTree.gen.ts"
+  ],
+  "ignoreDependencies": [
+    "@tanstack/router-devtools",
+    "vinxi",
+    "@vitejs/plugin-react",
+    "vite-tsconfig-paths"
+  ]
+}

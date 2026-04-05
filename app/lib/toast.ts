@@ -1,0 +1,31 @@
+import { toast } from "sonner";
+
+/**
+ * Wraps an async operation with automatic toast feedback.
+ *
+ * Usage:
+ * ```ts
+ * await withToast(
+ *   () => updateProfile({ name }),
+ *   { loading: "Saving...", success: "Saved", error: "Failed to save" }
+ * );
+ * ```
+ */
+export async function withToast<T>(
+  fn: () => Promise<T>,
+  messages: {
+    loading?: string;
+    success?: string;
+    error?: string;
+  } = {},
+): Promise<T> {
+  return toast.promise(fn(), {
+    loading: messages.loading ?? "Loading...",
+    success: messages.success ?? "Done",
+    error: (err) =>
+      messages.error ??
+      (err instanceof Error ? err.message : "Something went wrong"),
+  });
+}
+
+export { toast } from "sonner";

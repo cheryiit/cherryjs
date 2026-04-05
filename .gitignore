@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.output/
+.vinxi/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Convex
+.convex/
+
+# Example projects
+example_projects/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+Thumbs.db
+*.bak
