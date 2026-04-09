@@ -32,7 +32,7 @@ Production framework for AI-driven development on Convex + TanStack Start.
 │  │ ...paymentsTables (empty — Polar component owns billing)     │   │
 │  └──────────────────────────────────────────────────────────────┘   │
 │                                                                     │
-│  ┌── lib/ (20 modules — standalone, no apps/core imports) ──────┐   │
+│  ┌── lib/ (21 modules — standalone, no apps/core imports) ──────┐   │
 │  │ functions.ts   errors.ts    audit.ts     permissions.ts      │   │
 │  │ rateLimiter.ts settings.ts  polar.ts     storage.ts (R2)     │   │
 │  │ email.ts       workflow.ts  aggregate.ts validators.ts       │   │

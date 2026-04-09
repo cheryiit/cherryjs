@@ -3,7 +3,7 @@ paths:
   - "convex/**/*.ts"
 ---
 
-# Backend lib/ Reference (20 modules)
+# Backend lib/ Reference (21 modules)
 
 Complete catalog of `convex/lib/*` shared infrastructure. **Always check this list before writing utility code — it probably already exists.**
 
@@ -290,7 +290,7 @@ batch migration      → migration({...})
 send email           → resend.sendEmail (integration only)
 upload file          → generatePresignedUploadUrl (integration only)
 search text          → searchText(ctx, table, index, query)
-verify webhook       → validateWebhookSignature
+verify webhook       → Convex components (polar, betterAuth, resend)
 extract IP/lang      → extractIpFromRequest / parseLanguage (Hono only)
 retry external API   → retrier.run (integration only)
 multi-step process   → workflow.define

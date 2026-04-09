@@ -6,7 +6,7 @@ description: Git workflow, commit message style, branch naming, and PR conventio
 
 ## Before Every Commit
 
-1. Run `npm run test:arch` — must pass (788+ tests, 0 failures)
+1. Run `npm run test:arch` — must pass (1300+ tests, 0 failures)
 2. Run `npm run lint:deps` — must show 0 dependency violations
 3. Run `npm run typecheck` — TypeScript must compile clean
 4. Quick command: `npm run check` runs all three

@@ -64,7 +64,7 @@ The backend lives on **Convex cloud** always (never bundled into Cloudflare). Th
 ## Commands
 
 ```bash
-npm run test:arch        # 1167+ architectural tests (MUST pass after every change)
+npm run test:arch        # 1300+ architectural tests (MUST pass after every change)
 npm run lint:deps        # dependency-cruiser: cross-domain, circular deps
 npm run lint:duplicates  # jscpd: duplicate code detection (< 10%)
 npm run lint:convex      # @convex-dev/eslint-plugin: args validators, table ids, etc.
@@ -86,7 +86,7 @@ convex/
   auth.ts             # Better-Auth 0.11 setup with user trigger callbacks
   auth.config.ts      # Convex JWT verifier config (Better Auth provider)
   triggers.ts         # DB trigger registry (role changes audited)
-  lib/                # 20 shared modules (flat, no subdirs)
+  lib/                # 21 shared modules (flat, no subdirs)
                       #   Component instances: polar.ts, storage.ts (R2), email.ts (Resend)
                       #   Wrappers: functions.ts, errors.ts, audit.ts, settings.ts, ...
   core/               # 5 infra modules: audit, parameter, schedule, webhook, content
@@ -100,8 +100,8 @@ convex/
 
 app/
   client.tsx, server.tsx, router.tsx  # Entry points (Cloudflare Workers compatible)
-  lib/                # 9 shared utilities
-  components/ui/      # 12 Radix+CVA components
+  lib/                # 13 shared utilities
+  components/ui/      # 13 Radix+CVA components
   components/layout/  # Navbar, Footer, LayoutMain
   features/           # Feature modules (kebab-case dirs)
   routes/             # TanStack Start file-based routing
@@ -166,7 +166,7 @@ app/
 | Audit logging | `ctx.audit.log()` | `ctx.db.insert("auditLogs")` |
 | File upload | `lib/storage.ts` | direct `new S3Client()` |
 | Email | `lib/email.ts` (Resend) | direct `new Resend()` |
-| Webhook verify | `lib/webhookVerify.ts` | manual HMAC |
+| Webhook verify | Convex components (`polar.registerRoutes`, `authComponent.registerRoutes`) | manual HMAC |
 | Rate limiting | lib/rateLimiter instance | `new RateLimiter()` |
 | DB filtering | `filter()` from lib/filter | `.collect().filter()` |
 | Row-level security | `withRls()` from lib/rls | manual per-query checks |
