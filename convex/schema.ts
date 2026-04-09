@@ -1,9 +1,10 @@
 import { defineSchema } from "convex/server";
-import { coreTables } from "./core/core.schema";
-import { usersTables } from "./apps/users/users.schema";
-import { paymentsTables } from "./apps/payments/payments.schema";
-import { waitlistTables } from "./apps/waitlist/waitlist.schema";
-import { notificationsTables } from "./apps/notifications/notifications.schema";
+import { coreTables } from "./core/coreSchema";
+import { usersTables } from "./apps/users/usersSchema";
+import { paymentsTables } from "./apps/payments/paymentsSchema";
+import { waitlistTables } from "./apps/waitlist/waitlistSchema";
+import { notificationsTables } from "./apps/notifications/notificationsSchema";
+import { inAppNotificationsTables } from "./apps/inAppNotifications/inAppNotificationsSchema";
 
 export default defineSchema({
   ...coreTables,
@@ -11,4 +12,5 @@ export default defineSchema({
   ...paymentsTables,
   ...waitlistTables,
   ...notificationsTables,
+  ...inAppNotificationsTables,
 });

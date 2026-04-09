@@ -103,6 +103,15 @@ module.exports = {
     doNotFollow: {
       path: ["node_modules", "_generated", "dist", ".output"],
     },
+    exclude: {
+      path: [
+        "node_modules",
+        "_generated",
+        "dist",
+        ".output",
+        "\\.gen\\.ts$", // TanStack Router auto-generated routeTree.gen.ts
+      ],
+    },
     tsPreCompilationDeps: true,
     tsConfig: { fileName: "tsconfig.json" },
     enhancedResolveOptions: {

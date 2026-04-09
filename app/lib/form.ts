@@ -1,4 +1,4 @@
-import { useForm, type FormOptions } from "@tanstack/react-form";
+import { useForm } from "@tanstack/react-form";
 import { toast } from "sonner";
 import type { z } from "zod";
 
@@ -27,9 +27,9 @@ export function useCherryForm<TValues extends Record<string, unknown>>(opts: {
     validators: opts.schema
       ? { onSubmit: opts.schema as any }
       : undefined,
-    onSubmit: async ({ value }) => {
+    onSubmit: async ({ value }: { value: TValues }) => {
       try {
-        await opts.onSubmit(value as TValues);
+        await opts.onSubmit(value);
         if (opts.successMessage) toast.success(opts.successMessage);
       } catch (error) {
         const message =
@@ -38,7 +38,7 @@ export function useCherryForm<TValues extends Record<string, unknown>>(opts: {
         throw error;
       }
     },
-  } satisfies FormOptions<TValues>);
+  });
 }
 
 export { useForm } from "@tanstack/react-form";

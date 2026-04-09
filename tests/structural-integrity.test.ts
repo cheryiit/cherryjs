@@ -9,44 +9,55 @@
 import { describe, it, expect } from "vitest";
 import {
   readdirSync,
-  readFileSync,
   statSync,
   existsSync,
 } from "fs";
-import { join, relative, basename, dirname } from "path";
+import { join, basename } from "path";
+import { ROOT, CONVEX, APP, walkFiles, getDirs, rel, read } from "./helpers";
 
-const ROOT = process.cwd();
-const CONVEX = join(ROOT, "convex");
-const APP = join(ROOT, "app");
+// =============================================================================
+// 0. CONVEX MULTI-DOT FILE NAMING (CRITICAL)
+// =============================================================================
+//
+// Convex's bundler silently skips files whose basename contains more than one
+// period (see node_modules/convex/dist/esm/bundler/index.js). For example,
+// `users.business.ts` is NOT pushed to the deployment — it's invisible.
+//
+// This means the old `{domain}.{layer}.ts` convention is incompatible with
+// Convex itself. The only allowed pattern is camelCase: `usersBusiness.ts`,
+// `parameterModel.ts`, `coreSchema.ts`, etc.
+//
+// `*.test.ts` is the one exception (Vitest uses it; Convex skips test files).
 
-function walkFiles(dir: string, ext?: string): string[] {
-  if (!existsSync(dir)) return [];
-  const results: string[] = [];
-  for (const entry of readdirSync(dir)) {
-    const full = join(dir, entry);
-    if (statSync(full).isDirectory()) {
-      results.push(...walkFiles(full, ext));
-    } else if (!ext || full.endsWith(ext)) {
-      results.push(full);
-    }
-  }
-  return results;
-}
+describe("Structural: Convex multi-dot file names forbidden", () => {
+  // Convex's own special config files are not bundled as user modules and
+  // therefore exempt from the single-dot rule.
+  const CONVEX_SPECIAL_FILES = new Set([
+    "convex.config.ts",
+    "auth.config.ts",
+  ]);
 
-function getDirs(dir: string): string[] {
-  if (!existsSync(dir)) return [];
-  return readdirSync(dir).filter((d) =>
-    statSync(join(dir, d)).isDirectory(),
+  const allConvexFiles = walkFiles(CONVEX, ".ts").filter(
+    (f) => !f.includes("_generated") && !f.includes("node_modules"),
   );
-}
 
-function rel(path: string): string {
-  return relative(ROOT, path);
-}
+  for (const file of allConvexFiles) {
+    const name = basename(file);
+    if (CONVEX_SPECIAL_FILES.has(name)) continue;
 
-function read(path: string): string {
-  return readFileSync(path, "utf-8");
-}
+    // Allow exactly one of: ".ts", ".test.ts" (vitest convention)
+    const dotCount = (name.match(/\./g) ?? []).length;
+    const isVitestFile = name.endsWith(".test.ts");
+    const allowed = dotCount === 1 || (isVitestFile && dotCount === 2);
+
+    it(`${rel(file)}: single dot in basename (Convex bundler requirement)`, () => {
+      expect(
+        allowed,
+        `${name}: contains ${dotCount} dots — Convex silently skips files with multiple dots in the basename. Use camelCase like "usersBusiness.ts" instead of "users.business.ts".`,
+      ).toBe(true);
+    });
+  }
+});
 
 // =============================================================================
 // 1. CONVEX ROOT — Only approved files at root level
@@ -101,6 +112,7 @@ describe("Structural: convex/ root files", () => {
 
 describe("Structural: convex/lib/ files", () => {
   const APPROVED_LIB_FILES = [
+    "aggregate.ts",
     "audit.ts",
     "cors.ts",
     "email.ts",
@@ -109,16 +121,17 @@ describe("Structural: convex/lib/ files", () => {
     "functions.ts",
     "migrations.ts",
     "permissions.ts",
-    "rate-limiter.ts",
+    "polar.ts",
+    "rateLimiter.ts",
     "relationships.ts",
-    "request-context.ts",
+    "requestContext.ts",
     "retrier.ts",
     "rls.ts",
+    "search.ts",
     "sessions.ts",
+    "settings.ts",
     "storage.ts",
     "validators.ts",
-    "search.ts",
-    "webhook-verify.ts",
     "workflow.ts",
   ];
 
@@ -152,6 +165,7 @@ describe("Structural: convex/lib/ files", () => {
 describe("Structural: convex/core/ modules", () => {
   const APPROVED_CORE_MODULES = [
     "audit",
+    "content",
     "parameter",
     "schedule",
     "webhook",
@@ -177,40 +191,41 @@ describe("Structural: convex/core/ modules", () => {
   );
 
   for (const file of coreRootFiles) {
-    it(`core/${file}: must be core.schema.ts`, () => {
+    it(`core/${file}: must be coreSchema.ts`, () => {
       expect(
         file,
-        `core/${file} — only core.schema.ts allowed at core/ root`,
-      ).toBe("core.schema.ts");
+        `core/${file} — only coreSchema.ts allowed at core/ root`,
+      ).toBe("coreSchema.ts");
     });
   }
 
-  // Each core module must follow naming: {module}.model.ts, {module}.business.ts, etc.
+  // Each core module must follow naming: {module}{Layer}.ts (camelCase, single dot for extension)
   for (const mod of APPROVED_CORE_MODULES) {
     const modDir = join(coreDir, mod);
     if (!existsSync(modDir)) continue;
 
     const modFiles = readdirSync(modDir).filter((f) => f.endsWith(".ts"));
     const APPROVED_SUFFIXES = [
-      ".model.ts",
-      ".business.ts",
-      ".channel.ts",
-      ".integration.ts",
-      ".schedule.ts",
-      ".batch.ts",
-      ".middleware.ts",
+      "Model.ts",
+      "Business.ts",
+      "Channel.ts",
+      "Integration.ts",
+      "Workflow.ts",
+      "Schedule.ts",
+      "Batch.ts",
+      "Middleware.ts",
       ".test.ts",
     ];
 
     for (const file of modFiles) {
       it(`core/${mod}/${file}: correct naming`, () => {
-        const startsWithMod = file.startsWith(`${mod}.`);
+        const startsWithMod = file.startsWith(mod);
         const hasApprovedSuffix = APPROVED_SUFFIXES.some((s) =>
           file.endsWith(s),
         );
         expect(
           startsWithMod && hasApprovedSuffix,
-          `core/${mod}/${file} — must be named ${mod}.{layer}.ts`,
+          `core/${mod}/${file} — must be named ${mod}{Layer}.ts (camelCase)`,
         ).toBe(true);
       });
     }
@@ -252,7 +267,7 @@ describe("Structural: convex/apps/ domains", () => {
       const subdirs = getDirs(domainDir);
       expect(
         subdirs.map((d) => `apps/${domain}/${d}/`),
-        `Subdirectories found — domain files must be flat: ${domain}/{domain}.{layer}.ts`,
+        `Subdirectories found — domain files must be flat: ${domain}/${domain}{Layer}.ts`,
       ).toHaveLength(0);
     });
 
@@ -262,10 +277,10 @@ describe("Structural: convex/apps/ domains", () => {
     );
 
     for (const file of domainFiles) {
-      it(`apps/${domain}/${file}: starts with "${domain}."`, () => {
+      it(`apps/${domain}/${file}: starts with "${domain}"`, () => {
         expect(
-          file.startsWith(`${domain}.`),
-          `apps/${domain}/${file} — must start with "${domain}."`,
+          file.startsWith(domain),
+          `apps/${domain}/${file} — must start with "${domain}" (camelCase: ${domain}{Layer}.ts)`,
         ).toBe(true);
       });
     }
@@ -285,7 +300,7 @@ describe("Structural: cross-domain table access", () => {
   const domains = getDirs(appsDir);
 
   for (const domain of domains) {
-    const schemaFile = join(appsDir, domain, `${domain}.schema.ts`);
+    const schemaFile = join(appsDir, domain, `${domain}Schema.ts`);
     if (!existsSync(schemaFile)) continue;
 
     const content = read(schemaFile);
@@ -299,7 +314,7 @@ describe("Structural: cross-domain table access", () => {
   }
 
   // Also add core tables
-  const coreSchemaFile = join(CONVEX, "core", "core.schema.ts");
+  const coreSchemaFile = join(CONVEX, "core", "coreSchema.ts");
   if (existsSync(coreSchemaFile)) {
     const content = read(coreSchemaFile);
     const tableMatches = content.matchAll(
@@ -314,7 +329,7 @@ describe("Structural: cross-domain table access", () => {
   for (const domain of domains) {
     const businessFiles = walkFiles(join(appsDir, domain), ".ts").filter(
       (f) =>
-        (f.endsWith(".business.ts") || f.endsWith(".channel.ts")) &&
+        (f.endsWith("Business.ts") || f.endsWith("Channel.ts")) &&
         !f.endsWith(".test.ts"),
     );
 
@@ -367,9 +382,9 @@ describe("Structural: schema aggregator completeness", () => {
   const appsDir = join(CONVEX, "apps");
   const domains = getDirs(appsDir);
 
-  // Every domain with a .schema.ts must be in schema.ts
+  // Every domain with a {domain}Schema.ts must be in schema.ts
   for (const domain of domains) {
-    const domainSchema = join(appsDir, domain, `${domain}.schema.ts`);
+    const domainSchema = join(appsDir, domain, `${domain}Schema.ts`);
     if (!existsSync(domainSchema)) continue;
 
     it(`schema.ts imports ${domain}Tables`, () => {
@@ -422,6 +437,7 @@ describe("Structural: app/ directory", () => {
     "server.tsx",
     "router.tsx",
     "routeTree.gen.ts",
+    "vite-env.d.ts",
   ];
 
   const appRootFiles = existsSync(APP)

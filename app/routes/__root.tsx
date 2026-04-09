@@ -4,6 +4,8 @@ import {
   Outlet,
   Scripts,
 } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { createServerFn } from "@tanstack/react-start";
 import { ConvexProvider } from "convex/react";
 import { Toaster } from "sonner";
@@ -55,6 +57,12 @@ function RootComponent() {
           <ThemeProvider>
             <Outlet />
             <Toaster richColors />
+            {import.meta.env.DEV && (
+              <>
+                <TanStackRouterDevtools position="bottom-right" />
+                <ReactQueryDevtools buttonPosition="bottom-left" />
+              </>
+            )}
           </ThemeProvider>
         </ConvexProvider>
         <Scripts />

@@ -11,7 +11,7 @@ export interface RouterContext {
   convexQueryClient: ConvexQueryClient;
 }
 
-export function createRouter() {
+export function getRouter() {
   const convexUrl = import.meta.env.VITE_CONVEX_URL;
   if (!convexUrl) {
     console.error("Missing VITE_CONVEX_URL environment variable");
@@ -53,6 +53,6 @@ export function createRouter() {
 
 declare module "@tanstack/react-router" {
   interface Register {
-    router: ReturnType<typeof createRouter>;
+    router: ReturnType<typeof getRouter>;
   }
 }

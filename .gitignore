@@ -6,23 +6,39 @@ dist/
 .output/
 .vinxi/
 
-# Environment
+# Environment (NEVER commit any of these — only the .example variants)
 .env
 .env.local
+.env.dev
+.env.prod
 .env.production
+.env.preview
 
-# IDE
+# IDE / AI tools (personal only — .vscode/settings.json IS committed)
 .idea/
-.vscode/
+.agents/
+.roo/
+.trae/
 *.swp
 *.swo
 .DS_Store
 
-# Convex
+# MCP server config (contains user-specific absolute paths)
+.mcp.json
+
+# Convex local state
 .convex/
+
+# Alchemy / Wrangler local state
+.alchemy/
+.wrangler/
 
 # Example projects
 example_projects/
+
+# Claude Code (personal overrides)
+.claude/settings.local.json
+CLAUDE.local.md
 
 # Logs
 *.log

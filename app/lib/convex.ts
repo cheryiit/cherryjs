@@ -9,10 +9,6 @@ export {
   useMutation,
   useAction,
   usePaginatedQuery,
-  useConvexAuth,
-  Authenticated,
-  Unauthenticated,
-  AuthLoading,
 } from "convex/react";
 
 export { useConvexQuery, useConvexMutation } from "@convex-dev/react-query";

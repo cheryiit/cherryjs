@@ -1,3 +1,17 @@
+/**
+ * Better Auth SSR utilities.
+ *
+ * Server-side helpers for authenticated data fetching in TanStack Start
+ * server functions (`createServerFn`). These use the Convex HTTP site
+ * URL to fetch a token and then call Convex queries/mutations with it.
+ *
+ * Usage in a route loader:
+ *
+ *   import { fetchQuery } from "~/app/lib/auth-server";
+ *   import { api } from "~/app/lib/convex";
+ *
+ *   const user = await fetchQuery(api.apps.users.usersChannel.me, {});
+ */
 import { convexBetterAuthReactStart } from "@convex-dev/better-auth/react-start";
 
 const env = {
@@ -6,7 +20,6 @@ const env = {
 };
 
 export const {
-  handler,
   getToken,
   fetchAuthQuery: fetchQuery,
   fetchAuthMutation: fetchMutation,

@@ -19,13 +19,15 @@ export async function withToast<T>(
     error?: string;
   } = {},
 ): Promise<T> {
-  return toast.promise(fn(), {
+  const promise = fn();
+  toast.promise(promise, {
     loading: messages.loading ?? "Loading...",
     success: messages.success ?? "Done",
     error: (err) =>
       messages.error ??
       (err instanceof Error ? err.message : "Something went wrong"),
   });
+  return promise;
 }
 
 export { toast } from "sonner";

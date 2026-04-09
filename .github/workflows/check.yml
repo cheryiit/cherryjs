@@ -1,0 +1,49 @@
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Arch tests + Lint + Typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Generate _generated/ so TypeScript can resolve Convex types.
+      # We use `npx convex codegen` which only regenerates types without
+      # pushing to any deployment — no CONVEX_DEPLOYMENT env var needed.
+      - name: Generate Convex types
+        run: npx convex codegen
+
+      - name: Architectural tests
+        run: npm run test:arch
+
+      - name: Dependency lint
+        run: npm run lint:deps
+
+      - name: Duplicate code lint
+        run: npm run lint:duplicates
+
+      - name: Convex ESLint
+        run: npm run lint:convex
+
+      - name: TypeScript typecheck
+        run: npm run typecheck

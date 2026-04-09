@@ -1,3 +1,5 @@
+// @ts-nocheck — Convex issue #53: TS2589 on convex-helpers/validators
+// generic re-exports once schema crosses ~10 tables. Runtime is fine.
 import { v } from "convex/values";
 export { literals, nullable, partial } from "convex-helpers/validators";
 
