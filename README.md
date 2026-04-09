@@ -233,7 +233,9 @@ tests/
 
 ## License
 
-MIT
+**Proprietary.** All rights reserved. See [LICENSE](./LICENSE) for details.
+
+This software may not be used, copied, modified, or distributed for commercial purposes without explicit written permission from the author.
 
 ---
 
